@@ -16,6 +16,7 @@ feature 'User signs up', %q{
   scenario "User signs up with valid information" do
      visit new_user_registration_path
 
+     save_and_open_page
      fill_in "First Name", with: "Gene"
 
 
