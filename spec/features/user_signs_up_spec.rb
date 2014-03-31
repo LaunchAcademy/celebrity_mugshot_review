@@ -16,15 +16,50 @@ feature 'User signs up', %q{
   scenario "User signs up with valid information" do
      visit new_user_registration_path
 
-     save_and_open_page
-     fill_in "First Name", with: "Gene"
 
+     fill_in "First name", with: "Gene"
+     fill_in "Last name", with: "Simons"
+     fill_in "User name", with: "GeneSimons"
+     fill_in "Email", with: "GeneSimons@kiss.com"
+     fill_in "Password", with: "Password"
+
+     click_on "Sign up"
+
+     expect(page).to have_content("Welcome! You have signed up successfully.")
 
   end
 
-  scenario "User enters NON-valid info"
+  scenario "User enters NON-valid info" do
+    visit new_user_registration_path
 
-  scenario "After signing up, I am directed back to the homepage"
+
+   fill_in "First name", with: "Gene"
+   fill_in "Last name", with: "Simons"
+   fill_in "User name", with: "GeneSimons"
+   fill_in "Email", with: ""
+   fill_in "Password", with: "Password"
+
+   click_on "Sign up"
+
+   expect(page).to have_content("can't be blank")
+
+  end
+
+  scenario "After signing up, I am directed back to the homepage" do
+    visit new_user_registration_path
+
+    fill_in "First name", with: "Gene"
+    fill_in "Last name", with: "Simons"
+    fill_in "User name", with: "GeneSimons"
+    fill_in "Email", with: "gene@gmai.com"
+    fill_in "Password", with: "Password"
+
+    click_on "Sign up"
+
+    expect(page).to have_content("Gene Simons")
+    expect(page).to have_content("Welcome! You have signed up successfully.")
+
+  end
 
 
 
