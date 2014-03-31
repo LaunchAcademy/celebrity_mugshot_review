@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: CelebrityMugshots_development
+  database: celebrity_mugshots_development
   pool: 5
   username:
   password:
@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: CelebrityMugshots_test
+  database: celebrity_mugshots_test
   pool: 5
   username:
   password:
@@ -54,7 +54,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: CelebrityMugshots_production
+  database: celebrity_mugshots_production
   pool: 5
   username:
   password:
