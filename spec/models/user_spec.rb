@@ -3,6 +3,8 @@ require 'spec_helper'
 describe User do
 
   it "requires a valid first name" do
+
+
   end
 
   it "requires a valid last name"
