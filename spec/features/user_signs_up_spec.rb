@@ -14,7 +14,9 @@ feature 'User signs up', %q{
 } do
 
   scenario "User signs up with valid information" do
-     visit '/user/sign_up'
+     visit new_user_registration_path
+
+     fill_in "First Name", with: "Gene"
 
 
   end
