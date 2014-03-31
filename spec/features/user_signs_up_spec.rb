@@ -17,7 +17,6 @@ feature 'User signs up', %q{
      visit '/user/sign_up'
 
 
-
   end
 
   scenario "User enters NON-valid info"
