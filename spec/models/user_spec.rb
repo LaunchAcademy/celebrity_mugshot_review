@@ -23,11 +23,27 @@ describe User do
     expect(no_email_name.errors[:email]).to include "can't be blank"
   end
 
-  it "requires a valid user name"do
+  it "requires a unique email"do
+    email_one_name = FactoryGirl.create(:user, email: "test@gmail.com")
+    email_two = FactoryGirl.build(:user, email: "test@gmail.com")
+
+    expect(email_two).to_not be_valid
+    expect(email_two.errors[:email]).to include "has already been taken"
+  end
+
+  it "requires a valid username"do
     no_username = FactoryGirl.build(:user, username: nil)
 
     expect(no_username).to_not be_valid
     expect(no_username.errors[:username]).to include "can't be blank"
+  end
+
+  it "requires a unique username"do
+    username = FactoryGirl.create(:user, username: "tes")
+    username_two = FactoryGirl.build(:user, username: "tes")
+
+    expect(username_two).to_not be_valid
+    expect(username_two.errors[:username]).to include "has already been taken"
   end
 
   it "requires a secure password"do
