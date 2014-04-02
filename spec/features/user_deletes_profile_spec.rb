@@ -25,20 +25,15 @@ feature 'User edit their profile', %q{
   end
 
   scenario "From the profile page I can click a link that will delete my profile" do
-    visit edit_user_registration_path
-
-    expect(page).to have_content("Cancel my account")
-  end
-
-  scenario "Before the system deletes my profile I am asked to confirm my deletion" do
-    visit edit_user_registration_path
-
     prev_count = User.count
 
+    visit edit_user_registration_path
     click_on "Cancel my account"
 
+    expect(page).to have_content("Bye! Your account was successfully cancelled. We hope to see you again soon.")
     expect(User.count).to eql(prev_count - 1)
-
   end
+
+
 
 end
