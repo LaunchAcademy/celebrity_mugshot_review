@@ -5,3 +5,4 @@
 <%= @mugshot.description %>
 <br /><br />
 <%= link_to 'Edit Mugshot', edit_mugshot_path(@mugshot) %>
+<%= link_to 'Delete Mugshot', mugshot_path(@mugshot), method: :delete %>

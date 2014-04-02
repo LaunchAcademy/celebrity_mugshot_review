@@ -34,6 +34,12 @@ class MugshotsController < ApplicationController
     end
   end
 
+  def destroy
+    @mugshot = Mugshot.find(params[:id])
+    @mugshot.destroy
+    redirect_to '/mugshots/new', notice: 'Mugshot deleted.'
+  end
+
   protected
   def mugshot_params
     params.require(:mugshot).permit(:first_name, :last_name, :description, :approximate_date )
