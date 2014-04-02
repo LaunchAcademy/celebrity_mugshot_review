@@ -20,7 +20,10 @@ feature 'create a new mugshot', %Q{
     fill_in 'First Name', with: 'Justin'
     fill_in 'Last Name', with: 'Bieber'
     fill_in 'Description', with: 'This guy should not be drunk driving'
-    fill_in 'Approximate Date', with: '10/3/13'
+    #select "Feature Request", from: "Category"
+    select "2014" && "April" && '11', from: "Approximate Date"
+    # select , from: "Approximate Date"
+    # select "1", from: "Approximate Date"
     #fill_in picture here (insert link or upload picture)
     click_button 'Upload Mugshot'
     expect(page).to have_content('Upload Sucessful!')
