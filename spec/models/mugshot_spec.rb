@@ -4,10 +4,10 @@ describe Mugshot do
   context 'validations' do
     let (:mugshot) {Mugshot.new}
 
-    it 'requres a first name' do
+    it 'requires a first name' do
       expect(mugshot).to_not be_valid
       expect(mugshot.errors[:first_name]).to be_present
-    end
+
 
     it 'requires a last name ' do
       expect(mugshot).to_not be_valid
