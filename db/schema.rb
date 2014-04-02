@@ -16,6 +16,15 @@ ActiveRecord::Schema.define(version: 20140401190558) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "mugshots", force: true do |t|
+    t.string   "first_name",       null: false
+    t.string   "last_name",        null: false
+    t.text     "description"
+    t.date     "approximate_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
