@@ -3,3 +3,5 @@
 <%= "#{@mugshot.first_name} #{@mugshot.last_name}" %>
 
 <%= @mugshot.description %>
+<br /><br />
+<%= link_to 'Edit Mugshot', edit_mugshot_path(@mugshot) %>

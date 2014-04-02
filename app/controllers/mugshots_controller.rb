@@ -21,6 +21,19 @@ class MugshotsController < ApplicationController
     @mugshots = Mugshot.all
   end
 
+  def edit
+    @mugshot = Mugshot.find(params[:id])
+  end
+
+  def update
+    @mugshot = Mugshot.find(params[:id])
+    if @mugshot.update(mugshot_params)
+      redirect_to mugshot_path(@mugshot), notice: 'Mugshot Updated'
+    else
+      render 'edit'
+    end
+  end
+
   protected
   def mugshot_params
     params.require(:mugshot).permit(:first_name, :last_name, :description, :approximate_date )

@@ -25,9 +25,8 @@ feature 'create a new mugshot', %Q{
     click_link 'Edit Mugshot'
     fill_in 'Last Name', with: 'Davidson'
 
-    click_button 'Submit new information'
-
+    click_button 'Update Mugshot'
     expect(page).to have_content('Davidson')
-    expect(page).to have_content('Mugshot Updated.')
+    expect(page).to have_content('Mugshot Updated')
   end
 end
