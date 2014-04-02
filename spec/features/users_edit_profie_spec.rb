@@ -36,6 +36,17 @@ feature 'User edit their profile', %q{
     page.should have_selector("input[type=submit][value='Update']")
   end
 
-  scenario
+  scenario "User can fill out form to update fields" do
+    visit edit_user_registration_path
 
+    fill_in "First name", with: "Gene1"
+    fill_in "Last name", with: "Simons1"
+    fill_in "Username", with: "Gene1Simons1"
+    fill_in "Email", with: "GeneSimons@kiss.com"
+    fill_in "Current password", with: "Password"
+
+    click_on "Update"
+
+    expect(page).to have_content("Gene1 Simons1")
+  end
 end
