@@ -28,6 +28,7 @@ group :test, :development do
   gem 'pry'
   gem 'factory_girl_rails'
   gem 'shoulda'
+  gem 'railroady'
 end
 
 group :test do
