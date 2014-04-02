@@ -26,8 +26,9 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'shoulda'
+  gem 'railroady'
 end
 
 group :test do
