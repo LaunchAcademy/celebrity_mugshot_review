@@ -23,7 +23,7 @@ feature 'create a new mugshot', %Q{
     click_button 'Create Mugshot'
 
     expect(page).to have_content('New Mugshot Submitted!')
-    expect(page).to have_content('Welcome to the Mugshot Index Page')
     expect(page).to have_content('Bieber')
+    save_and_open_page
   end
 end
