@@ -1,4 +1,4 @@
-module UserSignsUpHelper
+module LoginHelper
   def sign_up_as(user)
     visit new_user_registration_path
     fill_in "First name",   with: user.first_name

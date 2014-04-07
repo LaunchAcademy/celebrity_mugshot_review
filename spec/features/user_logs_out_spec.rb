@@ -9,17 +9,10 @@ feature 'user logs out', %q{
   # *When I click logout I am no longer logged in
   # *I am redirected back to the home page
 
-
-
   scenario "logged in, user see a 'Log Out' button that logs me out" do
     user = FactoryGirl.create(:user)
+    sign_in_as(user)
 
-    visit new_user_session_path
-
-    fill_in "Email", with: "gene1@kiss.com"
-    fill_in "Password", with: "password"
-
-    click_on "Sign in"
     click_on "Log Out"
 
     expect(page).to have_content("Signed out successfully.")
