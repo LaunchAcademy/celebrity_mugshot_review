@@ -37,7 +37,7 @@ class MugshotsController < ApplicationController
   def destroy
     @mugshot = Mugshot.find(params[:id])
     @mugshot.destroy
-    redirect_to '/mugshots/new', notice: 'Mugshot deleted.'
+    redirect_to '/mugshots/index', notice: 'Mugshot deleted.'
   end
 
   protected

@@ -1,9 +1,9 @@
 <h1> Welcome to the Mugshot Index Page </h1>
 
-<% @mugshots.each do |x| %>
+<% @mugshots.each do |mugshoter| %>
 
-  <%= x.first_name %>
-  <%= x.last_name %>
+  <%= mugshoter.first_name %>
+  <%= mugshoter.last_name %>
   <br /> <br />
 <% end %>
 
