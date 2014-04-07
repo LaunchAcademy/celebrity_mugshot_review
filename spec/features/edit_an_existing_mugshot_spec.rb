@@ -14,15 +14,9 @@ feature 'create a new mugshot', %Q{
   # I can save the new mugshot information
 
   scenario 'edit an existing mugshot' do
-    visit '/mugshots/new'
-    fill_in 'First Name', with: 'Justin'
-    fill_in 'Last Name', with: 'Bieber'
-    fill_in 'Description', with: 'This guy should not be drunk driving'
-    select "2014" && "April" && '11', from: "Approximate Date"
-    click_button 'Create Mugshot'
+    mugshot = FactoryGirl.create(:mugshot)
+    visit edit_mugshot_path(mugshot)
 
-    expect(page).to have_content('New Mugshot Submitted!')
-    click_link 'Edit Mugshot'
     fill_in 'Last Name', with: 'Davidson'
 
     click_button 'Update Mugshot'

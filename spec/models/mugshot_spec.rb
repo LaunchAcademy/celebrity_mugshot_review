@@ -6,7 +6,8 @@ describe Mugshot do
 
     it 'requires a first name' do
       expect(mugshot).to_not be_valid
-      expect(mugshot.errors[:first_name]).to be_present
+      expect(mugshot.errors[:first_name]).to include "can't be blank"
+    end
 
 
     it 'requires a last name ' do

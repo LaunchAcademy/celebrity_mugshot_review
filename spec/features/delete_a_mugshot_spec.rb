@@ -13,7 +13,7 @@ feature 'delete an existing mugshot', %Q{
 # As an authorized user I can delete a mugshot.
 
   scenario 'delete an existing valid mugshot post' do
-    visit '/mugshots/new'
+    visit new_mugshot_path
     fill_in 'First Name', with: 'Justin'
     fill_in 'Last Name', with: 'Bieber'
     fill_in 'Description', with: 'This guy should not be drunk driving'

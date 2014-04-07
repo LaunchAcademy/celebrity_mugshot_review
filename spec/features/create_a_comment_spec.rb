@@ -1,10 +1,10 @@
-require 'spec_helper'
+# require 'spec_helper'
 
-feature 'create a comment', %Q{
-  As a logged in user
-  I can leave a text comment on a mugshot
-  To let the world know what I really think...
-} do
+# feature 'create a comment', %Q{
+#   As a logged in user
+#   I can leave a text comment on a mugshot
+#   To let the world know what I really think...
+# } do
 
 # Acceptance Criteria
 
@@ -14,9 +14,9 @@ feature 'create a comment', %Q{
 # I am able to leave a comment under the picture
 
 
-  scenario 'create a new valid mugshot post' do
-    visit '/mugshots/'
+#   scenario 'create a new valid mugshot post' do
+#     visit '/mugshots/'
 
 
-  end
-end
+#   end
+# end
