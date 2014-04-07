@@ -1,6 +1,8 @@
 CelebrityMugshots::Application.routes.draw do
 
-root to: "home#index"
-resources :mugshots
+  root "pages#index"
+  resources :mugshots
+
+  devise_for :users
 
 end

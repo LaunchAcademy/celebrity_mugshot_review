@@ -12,11 +12,39 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+  <div class="contain-to-grid sticky" data-options="sticky_on: large">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">Celebrity Mugshots</a></h1>
+        </li>
+      </ul>
 
+      <section class="top-bar-section">
+        <ul class="right">
+          <% if user_signed_in? %>
+            <li class="active"> <%= link_to current_user.full_name, edit_user_registration_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class="active"> <%= link_to "Register", new_user_registration_path %></li>
+            <li> <%= link_to "Log In", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <%= yield %>
+    </div>
+  </div>
+
+>>>>>>> c61e2ef15d5ddea60981d6d60679cfb34d4d1c4a
     <%= javascript_include_tag "application" %>
   </body>
 </html>
