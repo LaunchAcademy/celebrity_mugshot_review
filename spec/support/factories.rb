@@ -6,4 +6,10 @@ FactoryGirl.define do
     password "password"
    sequence(:username) { |n| "gene#{n}" }
   end
+
+  factory :mugshot do
+    first_name 'britney'
+    last_name 'spears'
+    description 'lipsorum me'
+  end
 end
