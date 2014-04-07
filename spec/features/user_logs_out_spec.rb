@@ -9,8 +9,6 @@ feature 'user logs out', %q{
   # *When I click logout I am no longer logged in
   # *I am redirected back to the home page
 
-
-
   scenario "logged in, user see a 'Log Out' button that logs me out" do
     user = FactoryGirl.create(:user)
 
