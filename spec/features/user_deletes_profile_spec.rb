@@ -33,7 +33,4 @@ feature 'User edit their profile', %q{
     expect(page).to have_content("Bye! Your account was successfully cancelled. We hope to see you again soon.")
     expect(User.count).to eql(prev_count - 1)
   end
-
-
-
 end
