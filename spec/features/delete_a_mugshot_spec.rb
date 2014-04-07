@@ -27,4 +27,3 @@ feature 'delete an existing mugshot', %Q{
     expect(page).to have_content('Mugshot deleted.')
   end
 end
-
