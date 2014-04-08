@@ -8,6 +8,7 @@ feature 'create a new mugshot', %Q{
 
   # Acceptance Criteria
 
+  # An invalid user can not edit a mughshot that doesnot belong to them
   # I can navigate to a specific mugshot page
   # I can click a link to edit the mugshot profile
   # I can fill in new information pertaining to that mugshot
@@ -29,5 +30,23 @@ feature 'create a new mugshot', %Q{
     click_button 'Update'
     expect(page).to have_content('Davidson')
     expect(page).to have_content('Mugshot Updated')
+  end
+
+  scenario "An invalid user can not edit a mughshot that doesnot belong to them" do
+    not_the_maker = FactoryGirl.create(:user)
+
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+    visit new_mugshot_path
+
+    mugshot = FactoryGirl.create(:mugshot, user: user)
+
+    click_on "Log Out"
+    sign_in_as(not_the_maker)
+
+    visit edit_mugshot_path(mugshot)
+
+    expect(page).to have_content("Sorry you can not edit post you did not create")
+
   end
 end

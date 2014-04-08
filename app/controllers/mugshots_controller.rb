@@ -25,7 +25,11 @@ class MugshotsController < ApplicationController
   end
 
   def edit
-    @mugshot = current_user.mugshots.find(params[:id])
+    if current_user.mugshots.exists?(params[:id])
+      @mugshot = current_user.mugshots.find(params[:id])
+    else
+      redirect_to mugshots_path, notice: "Sorry you can not edit post you did not create"
+    end
   end
 
   def update

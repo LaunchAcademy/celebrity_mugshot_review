@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       redirect_to @mugshot,
         notice: "New comment Submitted!"
     else
-      render 'new'
+      render template:'mugshots/show'
     end
   end
 

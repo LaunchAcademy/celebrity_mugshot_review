@@ -13,7 +13,8 @@
   <%= f.submit 'Oh Damn... Submit'  %>
 <% end %>
 
-
-<% @mugshot_comments.each do |comment| %>
-  <p><strong><%= comment.title %> </strong> <%= comment.description %> </p>
+<% if !@mugshot_comments.nil? %>
+  <% @mugshot_comments.each do |comment| %>
+    <p><strong><%= comment.title %> </strong> <%= comment.description %> </p>
+  <% end %>
 <% end %>
