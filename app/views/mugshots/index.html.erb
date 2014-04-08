@@ -1,8 +1,27 @@
 <h1> Welcome to the Mugshot Index Page </h1>
 
+<a href=<%= new_mugshot_path %> class="button expand">Create a MUGSHOT</a>
+
+
 <% @mugshots.each do |mugshot| %>
 
-  <p><%= mugshot.first_name %></p>
-  <p><%= mugshot.last_name %></p>
-
+  <fieldset>
+    <div class="row">
+      <div class="row">
+        <div class="small-12 medium-12 columns">
+          <%= link_to mugshot.full_name, mugshot_path(mugshot) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-12 columns">
+          <%= "PhotoHere" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-12 columns">
+          <%= "mugshot.comments" %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
 <% end %>

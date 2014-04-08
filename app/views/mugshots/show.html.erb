@@ -3,6 +3,17 @@
 <p><%= @mugshot.full_name %></p>
 <p><%= @mugshot.description %></p>
 
-<p><%= link_to 'Edit Mugshot', edit_mugshot_path(@mugshot) %></p>
+<cite><%= link_to 'Edit', edit_mugshot_path(@mugshot) %>-<%= link_to 'Delete', @mugshot, method: :delete %></cite>
 
-<p><%= link_to 'Delete Mugshot', @mugshot, method: :delete %></p>
+<h3>Leave a funny comment </h3>
+<%= simple_form_for [@mugshot, @comment] do |f| %>
+  <%= f.input :title, label: 'Title' %>
+  <%= f.input :description, label: 'Comment' %>
+
+  <%= f.submit 'Oh Damn... Submit'  %>
+<% end %>
+
+
+<% @mugshot_comments.each do |comment| %>
+  <p><strong><%= comment.title %> </strong> <%= comment.description %> </p>
+<% end %>

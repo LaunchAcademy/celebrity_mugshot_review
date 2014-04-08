@@ -14,12 +14,19 @@ feature 'create a new mugshot', %Q{
   # I can save the new mugshot information
 
   scenario 'edit an existing mugshot' do
-    mugshot = FactoryGirl.create(:mugshot)
-    visit edit_mugshot_path(mugshot)
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+    visit new_mugshot_path
 
-    fill_in 'Last Name', with: 'Davidson'
+    celeb = FactoryGirl.create(:mugshot, user: user)
+    celeb.save
 
-    click_button 'Update Mugshot'
+
+    visit edit_mugshot_path(celeb)
+
+    fill_in 'Last Name', with: "Davidson"
+
+    click_button 'Update'
     expect(page).to have_content('Davidson')
     expect(page).to have_content('Mugshot Updated')
   end

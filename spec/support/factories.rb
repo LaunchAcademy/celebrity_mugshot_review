@@ -8,14 +8,10 @@ FactoryGirl.define do
   end
 
   factory :mugshot do
-    first_name 'dave'
-    last_name 'mulls'
-    description 'hello world'
-  end
-
-  factory :mugshot do
     first_name 'britney'
     last_name 'spears'
     description 'lipsorum me'
+
+    user
   end
 end
