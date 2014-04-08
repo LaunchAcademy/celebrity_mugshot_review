@@ -1,0 +1,8 @@
+<h1> Mugshot Page </h1>
+
+<p><%= @mugshot.full_name %></p>
+<p><%= @mugshot.description %></p>
+
+<p><%= link_to 'Edit Mugshot', edit_mugshot_path(@mugshot) %></p>
+
+<p><%= link_to 'Delete Mugshot', @mugshot, method: :delete %></p>

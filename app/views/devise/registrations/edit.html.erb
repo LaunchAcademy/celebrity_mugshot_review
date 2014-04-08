@@ -4,7 +4,6 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-
     <div class="row">
       <div class="small-12 columns">
         <%= f.input :email, required: true, autofocus: true %>
@@ -21,7 +20,7 @@
         <%= f.input :username %>
       </div>
     </div>
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
     <p>Following is for changing password</p>
@@ -35,21 +34,18 @@
       </div>
     </div>
     <p>Please confirm changes with current password</p>
-
     <div class="row">
       <div class="small-12 medium-6 columns">
         <%= f.input :current_password %>
       </div>
     </div>
   </div>
-
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
-
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>

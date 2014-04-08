@@ -14,15 +14,16 @@ feature 'create a new mugshot', %Q{
 # Add a date referencing the approximate date the mugshot was taken
 # Post celebrity mugshot so all users can see it
 
-
   scenario 'create a new valid mugshot post' do
     visit '/mugshots/new'
     fill_in 'First Name', with: 'Justin'
     fill_in 'Last Name', with: 'Bieber'
     fill_in 'Description', with: 'This guy should not be drunk driving'
-    fill_in 'Approximate Date', with: '10/3/13'
-    #fill_in picture here (insert link or upload picture)
-    click_button 'Upload Mugshot'
-    expect(page).to have_content('Upload Sucessful!')
+    select "2014" && "April" && '11', from: "Approximate Date"
+    click_button 'Create Mugshot'
+
+    expect(page).to have_content('New Mugshot Submitted!')
+    expect(page).to have_content('Bieber')
+
   end
 end
