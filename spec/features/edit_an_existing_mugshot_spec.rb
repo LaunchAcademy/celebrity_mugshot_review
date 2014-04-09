@@ -21,8 +21,12 @@ feature 'create a new mugshot', %Q{
     celeb = FactoryGirl.create(:mugshot, user: user)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     fill_in 'Last Name', with: 'Davidson'
     click_button 'Choose File'
+=======
+    visit edit_mugshot_path(celeb)
+>>>>>>> 6a7d84d992df6507345cd7dd1a7bd5394baa2365
 =======
     visit edit_mugshot_path(celeb)
 >>>>>>> 6a7d84d992df6507345cd7dd1a7bd5394baa2365

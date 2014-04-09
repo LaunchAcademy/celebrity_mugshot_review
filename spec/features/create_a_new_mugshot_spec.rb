@@ -25,12 +25,9 @@ feature 'create a new mugshot', %Q{
     fill_in 'Last Name', with: celeb.last_name
     fill_in 'Description', with: celeb.description
     select "2014" && "April" && '11', from: "Approximate Date"
-<<<<<<< HEAD
     click_button 'Choose File'
-    click_button 'Create Mugshot'
-=======
+
     click_button 'Oh Damn... Submit'
->>>>>>> 6a7d84d992df6507345cd7dd1a7bd5394baa2365
 
     expect(page).to have_content('New Mugshot Submitted!')
     expect(page).to have_content(celeb.first_name)
