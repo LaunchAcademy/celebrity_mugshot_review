@@ -16,7 +16,7 @@ class MugshotsController < ApplicationController
 
   def show
     @mugshot = Mugshot.find(params[:id])
-    @mugshot_comments = Comment.where("mugshot_id = ?", @mugshot)
+    @mugshot_comments = @mugshot.comments
     @comment = Comment.new
   end
 
@@ -49,7 +49,8 @@ class MugshotsController < ApplicationController
     redirect_to mugshots_path, notice: 'Mugshot deleted.'
   end
 
-  protected
+protected
+
   def mugshot_params
     params.require(:mugshot).permit(:first_name, :last_name, :description, :approximate_date )
   end

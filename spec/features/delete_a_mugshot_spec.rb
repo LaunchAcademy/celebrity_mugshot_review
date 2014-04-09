@@ -20,14 +20,6 @@ feature 'delete an existing mugshot', %Q{
     celeb = FactoryGirl.create(:mugshot, user: user)
     celeb.save
 
-    # fill_in 'First Name', with: celeb.first_name
-    # fill_in 'Last Name', with: celeb.last_name
-    # fill_in 'Description', with: celeb.description
-    # select "2014" && "April" && '11', from: "Approximate Date"
-    # click_button 'Create Mugshot'
-
-    # expect(page).to have_content('New Mugshot Submitted!')
-    # expect(page).to have_content('Bieber')
     visit mugshot_path(celeb)
 
     click_on 'Delete'

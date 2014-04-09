@@ -8,6 +8,7 @@ feature 'create a comment', %Q{
 
 # Acceptance Criteria
 
+
 # I am redirected to the specific mugshot page with picture
 # I am able to leave a comment under the picture
   scenario 'create a new valid mugshot post' do
@@ -35,5 +36,6 @@ feature 'create a comment', %Q{
     click_on('Oh Damn... Submit')
 
     expect(page).to have_content("Opps.. forgot the title")
+
   end
 end

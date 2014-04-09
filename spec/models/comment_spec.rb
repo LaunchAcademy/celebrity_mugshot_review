@@ -10,4 +10,5 @@ describe Comment do
 
   it { should have_valid(:description).when('Boston', "New York City") }
   it { should_not have_valid(:description).when('', nil) }
+
 end
