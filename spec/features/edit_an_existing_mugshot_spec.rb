@@ -19,7 +19,6 @@ feature 'create a new mugshot', %Q{
     visit new_mugshot_path
 
     celeb = FactoryGirl.create(:mugshot, user: user)
-    celeb.save
 
     visit edit_mugshot_path(celeb)
 

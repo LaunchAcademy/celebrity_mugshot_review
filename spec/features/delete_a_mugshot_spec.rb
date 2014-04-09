@@ -18,7 +18,6 @@ feature 'delete an existing mugshot', %Q{
     visit new_mugshot_path
 
     celeb = FactoryGirl.create(:mugshot, user: user)
-    celeb.save
 
     visit mugshot_path(celeb)
 
