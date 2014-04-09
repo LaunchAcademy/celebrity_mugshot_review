@@ -19,5 +19,7 @@ describe Mugshot do
     it 'validates imaging format'
     it 'validates url formatting'
 
+    it {should have_many(:comments)}
+    it {should belong_to(:user)}
   end
 end

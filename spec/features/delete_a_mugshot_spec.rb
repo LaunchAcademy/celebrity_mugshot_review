@@ -13,6 +13,8 @@ feature 'delete an existing mugshot', %Q{
 # As an authorized user I can delete a mugshot.
 
   scenario 'delete an existing valid mugshot post' do
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
     visit new_mugshot_path
     fill_in 'First Name', with: 'Justin'
     fill_in 'Last Name', with: 'Bieber'
@@ -22,8 +24,12 @@ feature 'delete an existing mugshot', %Q{
 
     expect(page).to have_content('New Mugshot Submitted!')
     expect(page).to have_content('Bieber')
+    celeb = FactoryGirl.create(:mugshot, user: user)
 
     click_link 'Delete Mugshot'
+    visit mugshot_path(celeb)
+
+    click_on 'Delete'
     expect(page).to have_content('Mugshot deleted.')
   end
 end
