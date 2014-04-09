@@ -15,15 +15,21 @@ feature 'create a new mugshot', %Q{
 # Post celebrity mugshot so all users can see it
 
   scenario 'create a new valid mugshot post' do
-    visit '/mugshots/new'
-    fill_in 'First Name', with: 'Justin'
-    fill_in 'Last Name', with: 'Bieber'
-    fill_in 'Description', with: 'This guy should not be drunk driving'
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+    visit new_mugshot_path
+
+    celeb = FactoryGirl.build(:mugshot)
+
+    fill_in 'First Name', with: celeb.first_name
+    fill_in 'Last Name', with: celeb.last_name
+    fill_in 'Description', with: celeb.description
     select "2014" && "April" && '11', from: "Approximate Date"
-    click_button 'Create Mugshot'
+    click_button 'Oh Damn... Submit'
 
     expect(page).to have_content('New Mugshot Submitted!')
-    expect(page).to have_content('Bieber')
-    save_and_open_page
+    expect(page).to have_content(celeb.first_name)
+    expect(page).to have_content(celeb.last_name)
+    expect(page).to have_content(celeb.description)
   end
 end

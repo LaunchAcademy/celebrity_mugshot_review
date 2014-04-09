@@ -4,7 +4,8 @@ class MugshotsController < ApplicationController
   end
 
   def create
-    @mugshot = Mugshot.new(mugshot_params)
+    @mugshot = current_user.mugshots.build(mugshot_params)
+
     if @mugshot.save
       redirect_to mugshot_path(@mugshot),
         notice: "New Mugshot Submitted!"
@@ -15,6 +16,8 @@ class MugshotsController < ApplicationController
 
   def show
     @mugshot = Mugshot.find(params[:id])
+    @mugshot_comments = @mugshot.comments
+    @comment = Comment.new
   end
 
   def index
@@ -22,11 +25,16 @@ class MugshotsController < ApplicationController
   end
 
   def edit
-    @mugshot = Mugshot.find(params[:id])
+    if current_user.mugshots.exists?(params[:id])
+      @mugshot = current_user.mugshots.find(params[:id])
+    else
+      redirect_to mugshots_path, notice: "Sorry you can not edit post you did not create"
+    end
   end
 
   def update
-    @mugshot = Mugshot.find(params[:id])
+    @mugshot = current_user.mugshots.find(params[:id])
+
     if @mugshot.update(mugshot_params)
       redirect_to mugshot_path(@mugshot), notice: 'Mugshot Updated'
     else
@@ -35,12 +43,14 @@ class MugshotsController < ApplicationController
   end
 
   def destroy
+    @mugshot = current_user.mugshots.find(params[:id])
     @mugshot = Mugshot.find(params[:id])
     @mugshot.destroy
-    redirect_to '/mugshots/index', notice: 'Mugshot deleted.'
+    redirect_to mugshots_path, notice: 'Mugshot deleted.'
   end
 
-  protected
+protected
+
   def mugshot_params
     params.require(:mugshot).permit(:first_name, :last_name, :description, :approximate_date )
   end

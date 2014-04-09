@@ -34,4 +34,5 @@ end
 group :test do
   gem 'launchy'
   gem 'capybara'
+  gem 'valid_attribute'
 end

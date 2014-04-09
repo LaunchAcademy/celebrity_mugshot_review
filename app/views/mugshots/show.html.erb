@@ -1,8 +1,39 @@
-<h1> Mugshot Page </h1>
+<div class="row">
+  <div class="small-12 medium-8 medium-centered columns">
+  <h1> Mugshot Page </h1>
 
-<p><%= @mugshot.full_name %></p>
-<p><%= @mugshot.description %></p>
+  <p><%= @mugshot.full_name %></p>
+  <p><%= @mugshot.description %></p>
 
-<p><%= link_to 'Edit Mugshot', edit_mugshot_path(@mugshot) %></p>
+  <%= image_tag 'celebrity-mugshots.jpeg' %> </br>
 
-<p><%= link_to 'Delete Mugshot', mugshot_path(@mugshot), method: :delete %></p>
+  <cite>
+    <%= link_to 'Edit', edit_mugshot_path(@mugshot) %>-<%= link_to 'Delete', @mugshot, method: :delete %>
+  </cite>
+    </div>
+
+  <h3>Leave a funny comment </h3>
+    <%= simple_form_for [@mugshot, @comment] do |f| %>
+      <fieldset>
+        <div class="small-12 medium-12 columns">
+
+        <%= f.input :title, label: 'Title' %>
+          </div>
+        <div class="small-12 medium-12 columns">
+
+        <%= f.input :description, label: 'Comment' %>
+          </div>
+           <div class="small-12 medium-12 columns">
+        <%= f.submit 'Oh Damn... Submit'  %>
+      </div>
+      </fieldset>
+    <% end %>
+
+  <% if !@mugshot_comments.nil? %>
+    <% @mugshot_comments.each do |comment| %>
+      <p><strong><%= comment.title %> </strong> <%= comment.description %> </p>
+    <% end %>
+  <% end %>
+
+  </div>
+</div>
