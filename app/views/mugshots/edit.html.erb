@@ -3,6 +3,7 @@
 <%= simple_form_for @mugshot do |f| %>
   <%= f.input :first_name, label: 'First Name' %>
   <%= f.input :last_name, label: 'Last Name' %>
+  <%= f.file_field :image %>
   <%= f.input :description, label: 'Description' %>
   <%= f.input :approximate_date, label: 'Approximate Date' %>
 

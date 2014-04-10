@@ -19,19 +19,7 @@ feature 'create a new mugshot', %Q{
     visit new_mugshot_path
 
     celeb = FactoryGirl.create(:mugshot, user: user)
-
-<<<<<<< HEAD
-<<<<<<< HEAD
     fill_in 'Last Name', with: 'Davidson'
-    click_button 'Choose File'
-=======
-    visit edit_mugshot_path(celeb)
->>>>>>> 6a7d84d992df6507345cd7dd1a7bd5394baa2365
-=======
-    visit edit_mugshot_path(celeb)
->>>>>>> 6a7d84d992df6507345cd7dd1a7bd5394baa2365
-
-    fill_in 'Last Name', with: "Davidson"
 
     click_button 'Update'
     expect(page).to have_content('Davidson')
@@ -52,6 +40,6 @@ feature 'create a new mugshot', %Q{
 
     visit edit_mugshot_path(mugshot)
 
-    expect(page).to have_content("Sorry you can not edit post you did not create")
+    expect(page).to have_content("Sorry, you cannot edit a post that you didn\'t create.")
   end
 end

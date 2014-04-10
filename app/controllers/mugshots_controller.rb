@@ -28,7 +28,7 @@ class MugshotsController < ApplicationController
     if current_user.mugshots.exists?(params[:id])
       @mugshot = current_user.mugshots.find(params[:id])
     else
-      redirect_to mugshots_path, notice: "Sorry you can not edit post you did not create"
+      redirect_to mugshots_path, notice: 'Sorry, you cannot edit a post that you didn\'t create.'
     end
   end
 
@@ -52,7 +52,7 @@ class MugshotsController < ApplicationController
 protected
 
   def mugshot_params
-    params.require(:mugshot).permit(:first_name, :last_name, :description, :approximate_date )
+    params.require(:mugshot).permit(:first_name, :last_name, :description, :approximate_date, :image)
   end
 end
 
