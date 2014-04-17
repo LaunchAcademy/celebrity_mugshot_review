@@ -24,8 +24,6 @@ describe Mugshot do
   end
 
   context 'valid mugshot creation' do
-    mugshot = FactoryGirl.create(:mugshot)
-
     it 'has a first name'
     it 'has a last name'
     it 'has a valid photo'
