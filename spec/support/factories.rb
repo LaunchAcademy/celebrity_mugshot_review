@@ -14,4 +14,12 @@ FactoryGirl.define do
 
     user
   end
+
+  factory :comment do
+    title "MyString"
+    description "MyText"
+    mugshot
+    user
+  end
+
 end
