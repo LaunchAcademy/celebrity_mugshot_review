@@ -1,27 +1,34 @@
 require 'spec_helper'
 
 describe Mugshot do
-  context 'validations' do
+  context 'invalid mugshot creation' do
     let (:mugshot) {Mugshot.new}
-    it 'requres a first name' do
+
+    it 'does not have a first name' do
       expect(mugshot).to_not be_valid
-      expect(mugshot.errors[:first_name]).to be_present
+      expect(mugshot.errors[:first_name]).to include "can't be blank"
     end
 
-    it 'requires a last name ' do
+    it 'does not have a last name' do
       expect(mugshot).to_not be_valid
       expect(mugshot.errors[:last_name]).to be_present
     end
 
-    # it 'has an optional description' do
-    #   expect(mugshot).to be_valid
-    # end
+    it 'does not have a valid photo' do
+      expect(mugshot).to_not be_valid
+      expect(mugshot.errors[:image]).to be_present
+    end
 
-    # it 'has an optional approximate date'
+    it {should have_many(:comments)}
+    it {should belong_to(:user)}
+  end
 
-    it 'validates added photo'
-    it 'validates imaging format'
-    it 'validates url formatting'
+  context 'valid mugshot creation' do
+    mugshot = FactoryGirl.create(:mugshot)
+
+    it 'has a first name'
+    it 'has a last name'
+    it 'has a valid photo'
 
   end
 end

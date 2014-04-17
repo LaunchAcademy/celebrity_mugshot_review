@@ -12,7 +12,10 @@ feature 'Use rates mugshots', %q{
   # -[ ] For each comment there is a thumbs up or thumbs down icon underneath the pic
   # -[ ] I can click either icon to show my like/dislike of a comment
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 821f483bd13dc1b58625716ae4d151e3d1e7c5a4
 end

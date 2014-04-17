@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="small-12 medium-8 medium-centered columns">
+  <h1><%= @mugshot.full_name %></h1>
+  <%= image_tag @mugshot.image_url %>
+  <p><%= @mugshot.description %></p>
+  <cite>
+    <%= link_to 'Edit', edit_mugshot_path(@mugshot) %>-<%= link_to 'Delete', @mugshot, method: :delete %>
+  </cite>
+    </div>
+
+  <h3>Leave a funny comment </h3>
+    <%= simple_form_for [@mugshot, @comment] do |f| %>
+      <fieldset>
+        <div class="small-12 medium-12 columns">
+
+        <%= f.input :title, label: 'Title' %>
+          </div>
+        <div class="small-12 medium-12 columns">
+
+        <%= f.input :description, label: 'Comment' %>
+          </div>
+           <div class="small-12 medium-12 columns">
+        <%= f.submit 'Oh Damn... Submit'  %>
+      </div>
+      </fieldset>
+    <% end %>
+
+  <% if !@mugshot_comments.nil? %>
+    <% @mugshot_comments.each do |comment| %>
+      <p><strong><%= comment.title %> </strong> <%= comment.description %> </p>
+    <% end %>
+  <% end %>
+
+  </div>
+</div>

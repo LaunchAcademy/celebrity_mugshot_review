@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140401190558) do
+ActiveRecord::Schema.define(version: 20140409232703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.integer  "user_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "mugshot_id",  null: false
+  end
+
+  add_index "comments", ["mugshot_id"], name: "index_comments_on_mugshot_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "mugshots", force: true do |t|
     t.string   "first_name",       null: false
@@ -23,7 +35,11 @@ ActiveRecord::Schema.define(version: 20140401190558) do
     t.date     "approximate_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",          null: false
+    t.string   "image"
   end
+
+  add_index "mugshots", ["user_id"], name: "index_mugshots_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

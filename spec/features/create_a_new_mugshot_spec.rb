@@ -14,15 +14,24 @@ feature 'create a new mugshot', %Q{
 # Add a date referencing the approximate date the mugshot was taken
 # Post celebrity mugshot so all users can see it
 
-
   scenario 'create a new valid mugshot post' do
-    visit '/mugshots/new'
-    fill_in 'First Name', with: 'Justin'
-    fill_in 'Last Name', with: 'Bieber'
-    fill_in 'Description', with: 'This guy should not be drunk driving'
-    fill_in 'Approximate Date', with: '10/3/13'
-    #fill_in picture here (insert link or upload picture)
-    click_button 'Upload Mugshot'
-    expect(page).to have_content('Upload Sucessful!')
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+    visit new_mugshot_path
+
+    celeb = FactoryGirl.build(:mugshot)
+
+    fill_in 'First Name', with: celeb.first_name
+    fill_in 'Last Name', with: celeb.last_name
+    fill_in 'Description', with: celeb.description
+    select "2014" && "April" && '11', from: "Approximate Date"
+    click_button 'Choose File'
+
+    click_button 'Oh Damn... Submit'
+
+    expect(page).to have_content('New Mugshot Submitted!')
+    expect(page).to have_content(celeb.first_name)
+    expect(page).to have_content(celeb.last_name)
+    expect(page).to have_content(celeb.description)
   end
 end
