@@ -1,7 +1,0 @@
-== Celebrity Mugshots
-
-Team: Keith Webber, Hannah Zabarsky, Davidson Ruben, David Ruben
-
-Checkout our wiki: https://github.com/LaunchAcademy/celebrity_mugshot_review/wiki
-
-<tt>rake doc:app</tt>.
