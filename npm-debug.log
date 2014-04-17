@@ -1,0 +1,222 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'generator-famous' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose cache add [ 'generator-famous', null ]
+5 verbose cache add name=undefined spec="generator-famous" args=["generator-famous",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'generator-famous',
+6 verbose parsed url   path: 'generator-famous',
+6 verbose parsed url   href: 'generator-famous' }
+7 silly lockFile b3babf7a-generator-famous generator-famous
+8 verbose lock generator-famous /Users/keithwebber/.npm/b3babf7a-generator-famous.lock
+9 silly lockFile b3babf7a-generator-famous generator-famous
+10 silly lockFile b3babf7a-generator-famous generator-famous
+11 verbose addNamed [ 'generator-famous', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile b7c541fd-generator-famous generator-famous@
+14 verbose lock generator-famous@ /Users/keithwebber/.npm/b7c541fd-generator-famous.lock
+15 silly addNameRange { name: 'generator-famous', range: '*', hasData: false }
+16 verbose url raw generator-famous
+17 verbose url resolving [ 'https://registry.npmjs.org/', './generator-famous' ]
+18 verbose url resolved https://registry.npmjs.org/generator-famous
+19 info trying registry request attempt 1 at 23:01:18
+20 http GET https://registry.npmjs.org/generator-famous
+21 http 200 https://registry.npmjs.org/generator-famous
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Thu, 10 Apr 2014 03:01:21 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+22 silly registry.get     etag: '"DB8JBK942W2IARTECGGDFWC69"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=1',
+22 silly registry.get     'content-length': '7442',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '235',
+22 silly registry.get     'x-served-by': 'cache-v36-ASH',
+22 silly registry.get     'x-cache': 'HIT',
+22 silly registry.get     'x-cache-hits': '1',
+22 silly registry.get     'x-timer': 'S1397098881.281828403,VS0,VE9',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'generator-famous', range: '*', hasData: true }
+24 silly addNameRange versions [ 'generator-famous', [ '0.1.0', '0.1.1' ] ]
+25 verbose addNamed [ 'generator-famous', '0.1.1' ]
+26 verbose addNamed [ '0.1.1', '0.1.1' ]
+27 silly lockFile 678b40c2-generator-famous-0-1-1 generator-famous@0.1.1
+28 verbose lock generator-famous@0.1.1 /Users/keithwebber/.npm/678b40c2-generator-famous-0-1-1.lock
+29 silly lockFile 206ed7bf-amous-generator-famous-0-1-1-tgz https://registry.npmjs.org/generator-famous/-/generator-famous-0.1.1.tgz
+30 verbose lock https://registry.npmjs.org/generator-famous/-/generator-famous-0.1.1.tgz /Users/keithwebber/.npm/206ed7bf-amous-generator-famous-0-1-1-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/generator-famous/-/generator-famous-0.1.1.tgz',
+31 verbose addRemoteTarball   'a098972a8b3c0067d36c4ba7f5fdd0f7b4ad569b' ]
+32 info retry fetch attempt 1 at 23:01:21
+33 verbose fetch to= /var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/tmp.tgz
+34 http GET https://registry.npmjs.org/generator-famous/-/generator-famous-0.1.1.tgz
+35 http 200 https://registry.npmjs.org/generator-famous/-/generator-famous-0.1.1.tgz
+36 verbose tar unpack /var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/tmp.tgz
+37 silly lockFile e3d5d023-1369-0-48989258566871285-package tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package
+38 verbose lock tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package /Users/keithwebber/.npm/e3d5d023-1369-0-48989258566871285-package.lock
+39 silly lockFile c719fa21-1369-0-48989258566871285-tmp-tgz tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/tmp.tgz
+40 verbose lock tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/tmp.tgz /Users/keithwebber/.npm/c719fa21-1369-0-48989258566871285-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm extractEntry README.md
+44 silly gunzTarPerm extractEntry app/index.js
+45 silly gunzTarPerm extractEntry app/USAGE
+46 silly gunzTarPerm extractEntry app/templates/README.md
+47 silly gunzTarPerm extractEntry app/templates/_Gruntfile.js
+48 silly gunzTarPerm extractEntry app/templates/_bower.json
+49 silly gunzTarPerm extractEntry app/templates/_index.html
+50 silly gunzTarPerm extractEntry app/templates/_package.json
+51 silly gunzTarPerm extractEntry app/templates/bowerrc
+52 silly gunzTarPerm extractEntry app/templates/styles/_app.css
+53 silly gunzTarPerm extractEntry app/templates/eslint.json
+54 silly gunzTarPerm extractEntry app/templates/gitignore
+55 silly gunzTarPerm extractEntry app/templates/images/_famous_symbol_transparent.png
+56 silly gunzTarPerm extractEntry app/templates/jscs.json
+57 silly gunzTarPerm extractEntry app/templates/src/_main.js
+58 silly gunzTarPerm extractEntry app/templates/src/_requireConfig.js
+59 silly gunzTarPerm extractEntry app/templates/editorconfig
+60 silly lockFile e3d5d023-1369-0-48989258566871285-package tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package
+61 silly lockFile e3d5d023-1369-0-48989258566871285-package tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package
+62 silly lockFile c719fa21-1369-0-48989258566871285-tmp-tgz tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/tmp.tgz
+63 silly lockFile c719fa21-1369-0-48989258566871285-tmp-tgz tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/tmp.tgz
+64 verbose tar pack [ '/Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz',
+64 verbose tar pack   '/var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package' ]
+65 verbose tarball /Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+66 verbose folder /var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package
+67 silly lockFile e3d5d023-1369-0-48989258566871285-package tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package
+68 verbose lock tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package /Users/keithwebber/.npm/e3d5d023-1369-0-48989258566871285-package.lock
+69 silly lockFile 9bf85a4a-nerator-famous-0-1-1-package-tgz tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+70 verbose lock tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz /Users/keithwebber/.npm/9bf85a4a-nerator-famous-0-1-1-package-tgz.lock
+71 silly lockFile e3d5d023-1369-0-48989258566871285-package tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package
+72 silly lockFile e3d5d023-1369-0-48989258566871285-package tar:///var/folders/v6/vzdwyff55qg1y75w3cq27j7r0000gn/T/npm-89305-ViE33oDW/1397098881369-0.48989258566871285/package
+73 silly lockFile 9bf85a4a-nerator-famous-0-1-1-package-tgz tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+74 silly lockFile 9bf85a4a-nerator-famous-0-1-1-package-tgz tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+75 silly lockFile 5b05e4bc-m-generator-famous-0-1-1-package /Users/keithwebber/.npm/generator-famous/0.1.1/package
+76 verbose lock /Users/keithwebber/.npm/generator-famous/0.1.1/package /Users/keithwebber/.npm/5b05e4bc-m-generator-famous-0-1-1-package.lock
+77 silly lockFile 5b05e4bc-m-generator-famous-0-1-1-package /Users/keithwebber/.npm/generator-famous/0.1.1/package
+78 silly lockFile 5b05e4bc-m-generator-famous-0-1-1-package /Users/keithwebber/.npm/generator-famous/0.1.1/package
+79 verbose tar unpack /Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+80 silly lockFile 57b73cd5-m-generator-famous-0-1-1-package tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package
+81 verbose lock tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package /Users/keithwebber/.npm/57b73cd5-m-generator-famous-0-1-1-package.lock
+82 silly lockFile 9bf85a4a-nerator-famous-0-1-1-package-tgz tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+83 verbose lock tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz /Users/keithwebber/.npm/9bf85a4a-nerator-famous-0-1-1-package-tgz.lock
+84 silly gunzTarPerm modes [ '755', '644' ]
+85 silly gunzTarPerm extractEntry package.json
+86 silly gunzTarPerm extractEntry README.md
+87 silly gunzTarPerm extractEntry app/index.js
+88 silly gunzTarPerm extractEntry app/USAGE
+89 silly gunzTarPerm extractEntry app/templates/README.md
+90 silly gunzTarPerm extractEntry app/templates/_Gruntfile.js
+91 silly gunzTarPerm extractEntry app/templates/_bower.json
+92 silly gunzTarPerm extractEntry app/templates/_index.html
+93 silly gunzTarPerm extractEntry app/templates/_package.json
+94 silly gunzTarPerm extractEntry app/templates/bowerrc
+95 silly gunzTarPerm extractEntry app/templates/styles/_app.css
+96 silly gunzTarPerm extractEntry app/templates/eslint.json
+97 silly gunzTarPerm extractEntry app/templates/gitignore
+98 silly gunzTarPerm extractEntry app/templates/images/_famous_symbol_transparent.png
+99 silly gunzTarPerm extractEntry app/templates/jscs.json
+100 silly gunzTarPerm extractEntry app/templates/src/_main.js
+101 silly gunzTarPerm extractEntry app/templates/src/_requireConfig.js
+102 silly gunzTarPerm extractEntry app/templates/editorconfig
+103 silly lockFile 57b73cd5-m-generator-famous-0-1-1-package tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package
+104 silly lockFile 57b73cd5-m-generator-famous-0-1-1-package tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package
+105 silly lockFile 9bf85a4a-nerator-famous-0-1-1-package-tgz tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+106 silly lockFile 9bf85a4a-nerator-famous-0-1-1-package-tgz tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+107 verbose chmod /Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz 644
+108 verbose chown /Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz [ 501, 20 ]
+109 silly lockFile 206ed7bf-amous-generator-famous-0-1-1-tgz https://registry.npmjs.org/generator-famous/-/generator-famous-0.1.1.tgz
+110 silly lockFile 206ed7bf-amous-generator-famous-0-1-1-tgz https://registry.npmjs.org/generator-famous/-/generator-famous-0.1.1.tgz
+111 silly lockFile 678b40c2-generator-famous-0-1-1 generator-famous@0.1.1
+112 silly lockFile 678b40c2-generator-famous-0-1-1 generator-famous@0.1.1
+113 silly lockFile b7c541fd-generator-famous generator-famous@
+114 silly lockFile b7c541fd-generator-famous generator-famous@
+115 silly resolved [ { name: 'generator-famous',
+115 silly resolved     version: '0.1.1',
+115 silly resolved     description: 'Create new Famo.us projects',
+115 silly resolved     license: 'MPL v2',
+115 silly resolved     main: 'app/index.js',
+115 silly resolved     repository: { type: 'git', url: 'git://github.com/famous/generator-famous' },
+115 silly resolved     author:
+115 silly resolved      { name: 'Myles Borins',
+115 silly resolved        email: 'mborins@stanford.edu',
+115 silly resolved        url: 'https://github.com/TheAlphaNerd' },
+115 silly resolved     engines: { node: '>=0.10.0' },
+115 silly resolved     scripts: { test: 'mocha' },
+115 silly resolved     files: [ 'app' ],
+115 silly resolved     keywords:
+115 silly resolved      [ 'yeoman-generator',
+115 silly resolved        'famo.us',
+115 silly resolved        'generator',
+115 silly resolved        'boilerplate',
+115 silly resolved        'grunt' ],
+115 silly resolved     dependencies:
+115 silly resolved      { 'yeoman-generator': '~0.16.0',
+115 silly resolved        chalk: '~0.4.0',
+115 silly resolved        lodash: '^2.4.1',
+115 silly resolved        mixpanel: '0.0.19',
+115 silly resolved        osenv: '0.0.3',
+115 silly resolved        rc: '^0.3.4' },
+115 silly resolved     devDependencies: { mocha: '*' },
+115 silly resolved     peerDependencies: { yo: '>=1.0.0' },
+115 silly resolved     readme: '# generator-[famous](http://famo.us)\n\n> Use this [yeoman](http://yeoman.io) generator to seed your next Famo.us project... automation ftw!\n\n\n## Getting Started\n\n### What is Yeoman?\n\nTrick question. It\'s not a thing. It\'s this guy:\n\n![yeoman](http://i.imgur.com/JHaAlBJ.png)\n\nBasically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.\n\nNot every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*\n\n```\n$ npm install -g yo\n```\n\n### How to Install\n\nTo install ```generator-famous``` from npm simply run the command\n\n```\n$ npm install -g generator-famous\n```\n\nMake a directory to put your app into and hop in\n\n```\n$ mkdir moobyApp   # mkdir makes a new directory\n$ cd moobyApp      # cd is short for change directory\n$ yo famous        # Let\'s call the yeoman to make us famous\n```\n\n### Features\n\n* Development server with live-reload\n* Real time linting with eslint and jscs\n* Automatically inject bower-installed vendor code into require.js config\n* All the dot files!\n* A single command to prepare your project for production\n\n### Generators\n\nAvailable generators:\n\n* [famous](#app) (a.k.a. [famous:app](#app))\n* [famous:view](#view)\n\n**These generators must be run from the root directory of you project**\n\n###App\n\nDescription:\n    Creates a default Famo.us app\n    \nExample:\n    \nyo famous\n    \n    This will create:\n        README.md\n        Gruntfile.js\n        bower.json\n        package.json\n        \n        .bowerrc\n        .editorconfig\n        .edlint.json\n        .jscs.json\n        \n        app/index.html\n        app/src/main.js\n        app/src/requireConfig.js\n        app/src/content/images/famous_symbol_transparent.png\n        app/src/styles/app.css\n\n###View\n\nDescription:\n    Creates a new View\n    \nExample:\n    \nyo famous:view MyView\n    \n    This will create:\n        app/src/views/MyView.js\n        \n    \nyo famous:view Some/Path/OtherView\n    \n    This will create:\n        app/src/views/Some/Path/OtherView.js\n\n### Getting To Know Yeoman\n\nIf you\'d like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).\n\n###Be Aware of .yo-rc.json\n\nWhen this generator scaffolds out a project it generates a .yo-rc.json file.  This file allows yo to run again in the same directory without prompting you for information.  This is particularly useful if you want to update your project to be based on the latest version of generator-famous.  This can be a problem though, as yo searches up the file tree to check if there is a version of .yo-rc.json.   So if you for example accidentally ran ```yo famous``` from a directory that was not empty, you might end up leaving the .yo-rc.json in the directory above where you would like to be.  The result will be then when running yo in an empty directory afterwards your files will never end up in the folder you are expecting them to.\n\nPHEW\n\nTLDR: If ```yo famous``` is putting things in parent directories check for an orphaned .yo-rc.json\n\n### Shout outs\n\nThis generator could not have been made possible without the great work done on [generator-webapp](https://github.com/yeoman/generator-webapp), [generator-angular](https://github.com/yeoman/generator-angular/blob/master/readme.md), and [generator-assemble](https://github.com/assemble/generator-assemble)\n\n## License\n\nMPL V2.0',
+115 silly resolved     readmeFilename: 'README.md',
+115 silly resolved     bugs: { url: 'https://github.com/famous/generator-famous/issues' },
+115 silly resolved     homepage: 'https://github.com/famous/generator-famous',
+115 silly resolved     _id: 'generator-famous@0.1.1',
+115 silly resolved     dist: { shasum: 'a098972a8b3c0067d36c4ba7f5fdd0f7b4ad569b' },
+115 silly resolved     _from: 'generator-famous@',
+115 silly resolved     _resolved: 'https://registry.npmjs.org/generator-famous/-/generator-famous-0.1.1.tgz' } ]
+116 info install generator-famous@0.1.1 into /usr/local/lib
+117 info installOne generator-famous@0.1.1
+118 info /usr/local/lib/node_modules/generator-famous unbuild
+119 verbose tar unpack /Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+120 silly lockFile ad8f11ec-ib-node-modules-generator-famous tar:///usr/local/lib/node_modules/generator-famous
+121 verbose lock tar:///usr/local/lib/node_modules/generator-famous /Users/keithwebber/.npm/ad8f11ec-ib-node-modules-generator-famous.lock
+122 silly lockFile 9bf85a4a-nerator-famous-0-1-1-package-tgz tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz
+123 verbose lock tar:///Users/keithwebber/.npm/generator-famous/0.1.1/package.tgz /Users/keithwebber/.npm/9bf85a4a-nerator-famous-0-1-1-package-tgz.lock
+124 silly gunzTarPerm modes [ '755', '644' ]
+125 error Error: EACCES, mkdir '/usr/local/lib/node_modules/generator-famous'
+125 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/generator-famous']
+125 error   errno: 3,
+125 error   code: 'EACCES',
+125 error   path: '/usr/local/lib/node_modules/generator-famous',
+125 error   fstream_type: 'Directory',
+125 error   fstream_path: '/usr/local/lib/node_modules/generator-famous',
+125 error   fstream_class: 'DirWriter',
+125 error   fstream_stack:
+125 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+125 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+125 error      'Object.oncomplete (fs.js:107:15)' ] }
+126 error Please try running this command again as root/Administrator.
+127 error System Darwin 13.1.0
+128 error command "node" "/usr/local/bin/npm" "install" "-g" "generator-famous"
+129 error cwd /Users/keithwebber/Dropbox/MyRepo/celebrity_mugshot_review
+130 error node -v v0.10.26
+131 error npm -v 1.4.3
+132 error path /usr/local/lib/node_modules/generator-famous
+133 error fstream_path /usr/local/lib/node_modules/generator-famous
+134 error fstream_type Directory
+135 error fstream_class DirWriter
+136 error code EACCES
+137 error errno 3
+138 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/generator-famous'
+139 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+139 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+139 error fstream_stack Object.oncomplete (fs.js:107:15)
+140 verbose exit [ 3, true ]
