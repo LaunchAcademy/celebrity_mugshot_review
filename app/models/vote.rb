@@ -4,6 +4,6 @@ class Vote < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :mugshot_id, presence: true
-  validates :user_id, presence: true
+  validates :mugshot, presence: true
+  validates :user, presence: true
 end
