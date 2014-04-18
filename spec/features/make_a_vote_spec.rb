@@ -17,10 +17,8 @@ feature 'create a comment', %Q{
     mugshot = FactoryGirl.create(:mugshot, user: user)
     visit mugshot_path(mugshot)
 
-    prev_count = mugshot.vote_count
-    click_on "#up"
-
-    expect(vote_count).to eql(prev_count+1)
-    expect(page).to have_content("Thanks!")
+    prev_count = 0
+    click_button "Guilty"
+    expect(Mugshot.first.vote_count).to eql(prev_count + 1)
   end
 end

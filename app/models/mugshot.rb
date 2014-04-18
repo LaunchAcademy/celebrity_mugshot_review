@@ -14,5 +14,13 @@ class Mugshot < ActiveRecord::Base
     first_name << ' ' << last_name
   end
 
+  def has_vote_from?(user)
+    return false if user.nil?
 
+    self.votes.where(user_id: user.id).any?
+  end
+
+  def vote_from(user)
+    self.votes.where(user_id: user.id).first
+  end
 end

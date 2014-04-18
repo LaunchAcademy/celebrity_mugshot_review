@@ -6,7 +6,7 @@ CelebrityMugshots::Application.routes.draw do
     resources :votes, only: [:create]
   end
 
-  resources :votes, only: [:create]
+  resources :votes, only: [:destroy]
 
   devise_for :users
 
