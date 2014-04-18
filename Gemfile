@@ -33,4 +33,5 @@ group :test do
   gem 'launchy'
   gem 'capybara'
   gem 'valid_attribute'
+  gem 'coveralls', require: false
 end
