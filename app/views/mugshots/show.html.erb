@@ -1,12 +1,8 @@
 <div class="row">
   <div class="small-12 medium-8 medium-centered columns">
-  <h1> Mugshot Page </h1>
-
-  <p><%= @mugshot.full_name %></p>
+  <h1><%= @mugshot.full_name %></h1>
+  <%= image_tag @mugshot.image_url %>
   <p><%= @mugshot.description %></p>
-
-  <%= image_tag 'celebrity-mugshots.jpeg' %> </br>
-
   <cite>
     <%= link_to 'Edit', edit_mugshot_path(@mugshot) %>-<%= link_to 'Delete', @mugshot, method: :delete %>
   </cite>

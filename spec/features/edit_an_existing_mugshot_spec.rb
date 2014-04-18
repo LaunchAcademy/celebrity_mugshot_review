@@ -16,33 +16,26 @@ feature 'create a new mugshot', %Q{
   scenario 'edit an existing mugshot' do
     user = FactoryGirl.create(:user)
     sign_in_as(user)
-    visit new_mugshot_path
-
     celeb = FactoryGirl.create(:mugshot, user: user)
-
     visit edit_mugshot_path(celeb)
-
-    fill_in 'Last Name', with: "Davidson"
-
-    click_button 'Update'
-    expect(page).to have_content('Davidson')
+    fill_in 'Last Name', with: celeb.last_name
+    attach_file 'mugshot_image', File.join(Rails.root, '/spec/support/cat-mug-shot.jpg')
+    click_on 'Update Mugshot'
+    expect(page).to have_content(celeb.last_name)
     expect(page).to have_content('Mugshot Updated')
   end
 
   scenario "A user who did not create the mugshot can not edit the mughshot that doesnot belong to them" do
     not_the_maker = FactoryGirl.create(:user)
-
     user = FactoryGirl.create(:user)
+
     sign_in_as(user)
     visit new_mugshot_path
-
     mugshot = FactoryGirl.create(:mugshot, user: user)
-
     click_on "Log Out"
+
     sign_in_as(not_the_maker)
-
     visit edit_mugshot_path(mugshot)
-
-    expect(page).to have_content("Sorry you can not edit post you did not create")
+    expect(page).to have_content("Sorry, you cannot edit a post that you didn\'t create.")
   end
 end

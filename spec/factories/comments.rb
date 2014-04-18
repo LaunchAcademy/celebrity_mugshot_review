@@ -1,5 +1,3 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :comment do
     title "MyString"
@@ -7,5 +5,4 @@ FactoryGirl.define do
     mugshot
     user
   end
-
 end
