@@ -24,6 +24,12 @@
       </div>
       </fieldset>
     <% end %>
+    <div id="up">
+      <%= button_to "Vote", [@mugshot, @vote] %>
+     <button onclick="sendVoteToSever()" >Love it!</button>
+    </div>
+
+
 
   <% if !@mugshot_comments.nil? %>
     <% @mugshot_comments.each do |comment| %>
