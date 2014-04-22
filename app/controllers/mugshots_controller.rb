@@ -18,10 +18,12 @@ class MugshotsController < ApplicationController
     @mugshot = Mugshot.find(params[:id])
     @mugshot_comments = @mugshot.comments
     @comment = Comment.new
+    @vote = Vote.new
   end
 
   def index
-    @mugshots = Mugshot.all
+    @mugshots = Mugshot.order(:created_at).page params[:page]
+
   end
 
   def edit
