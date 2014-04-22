@@ -1,6 +1,6 @@
 CelebrityMugshots::Application.routes.draw do
 
-  root "pages#index"
+  root "mugshots#index"
   resources :mugshots do
     resources :comments
     resources :votes, only: [:create]

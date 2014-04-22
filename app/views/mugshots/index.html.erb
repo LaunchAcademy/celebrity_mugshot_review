@@ -1,19 +1,22 @@
-<h1> Welcome to the Mugshot Index Page </h1>
-
 <%= link_to "Create a Mugshot", new_mugshot_path, class: "button expand" %>
 
-<div class="panel">
+<ul class="small-block-grid-1 medium-block-grid-3">
   <% @mugshots.each do |mugshot| %>
-    <div class="row">
-      <div class="small-12 medium-8 medium-centered columns">
-        <%= link_to mugshot.full_name, mugshot_path(mugshot) %>
-      </div>
-      <div class="small-12 medium-8 medium-centered columns">
-        <%= image_tag 'celebrity-mugshots.jpeg' %>
-      </div>
-      <div class="small-12 medium-8 medium-centered columns">
-        <%= "mugshot.comments" %>
-      </div>
-    </div>
+    <li>
+      <h3><%= link_to mugshot.full_name, mugshot_path(mugshot) %></h3>
+      <%= image_tag mugshot.image %>
+      <p><%= mugshot.description %></p>
+    </li>
+    <li>
+      <h3><%= link_to mugshot.full_name, mugshot_path(mugshot) %></h3>
+      <%= image_tag 'http://placekitten.com/g/200/450' %>
+      <p><%= mugshot.description %></p>
+    </li>
+    <li>
+      <h3><%= link_to mugshot.full_name, mugshot_path(mugshot) %></h3>
+      <%= image_tag 'http://placebear.com/200/00' %>
+      <p><%= mugshot.description %></p>
+    </li>
   <% end %>
-</div>
+  <%= paginate @mugshots %>
+</ul>

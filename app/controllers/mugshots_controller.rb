@@ -4,13 +4,16 @@ class MugshotsController < ApplicationController
   end
 
   def create
-    @mugshot = current_user.mugshots.build(mugshot_params)
-
-    if @mugshot.save
-      redirect_to mugshot_path(@mugshot),
-        notice: "New Mugshot Submitted!"
+    if !user_signed_in?
+      redirect_to new_user_session_path
     else
-      render 'new'
+      @mugshot = current_user.mugshots.build(mugshot_params)
+      if @mugshot.save
+        redirect_to mugshot_path(@mugshot),
+          notice: "New Mugshot Submitted!"
+      else
+        render 'new'
+      end
     end
   end
 
@@ -22,7 +25,8 @@ class MugshotsController < ApplicationController
   end
 
   def index
-    @mugshots = Mugshot.all
+    @mugshots = Mugshot.order(:created_at).page params[:page]
+
   end
 
   def edit
