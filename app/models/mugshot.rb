@@ -9,6 +9,7 @@ class Mugshot < ActiveRecord::Base
   validates :image, presence: true
 
   mount_uploader :image, ImageUploader
+  paginates_per 50
 
   def full_name
     first_name << ' ' << last_name

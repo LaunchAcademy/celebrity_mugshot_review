@@ -22,7 +22,8 @@ class MugshotsController < ApplicationController
   end
 
   def index
-    @mugshots = Mugshot.all
+    @mugshots = Mugshot.order(:created_at).page params[:page]
+
   end
 
   def edit
