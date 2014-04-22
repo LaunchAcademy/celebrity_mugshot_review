@@ -3,6 +3,13 @@
   <h1><%= @mugshot.full_name %></h1>
   <%= image_tag @mugshot.image_url %>
   <p><%= @mugshot.description %></p>
+
+  <% if @mugshot.has_vote_from?(current_user) %>
+    <%= button_to "Not Guilty", vote_path(@mugshot.vote_from(current_user)), method: :delete %>
+  <% else %>
+    <%= button_to "Guilty", [@mugshot, @vote] %>
+  <% end %>
+
   <cite>
     <%= link_to 'Edit', edit_mugshot_path(@mugshot) %>-<%= link_to 'Delete', @mugshot, method: :delete %>
   </cite>
@@ -24,6 +31,12 @@
       </div>
       </fieldset>
     <% end %>
+    <div id="up">
+
+
+    </div>
+
+
 
   <% if !@mugshot_comments.nil? %>
     <% @mugshot_comments.each do |comment| %>

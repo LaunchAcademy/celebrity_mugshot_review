@@ -2,6 +2,7 @@ class Mugshot < ActiveRecord::Base
   belongs_to :user
   has_many :comments,
     dependent: :destroy
+  has_many :votes
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -11,5 +12,15 @@ class Mugshot < ActiveRecord::Base
 
   def full_name
     first_name << ' ' << last_name
+  end
+
+  def has_vote_from?(user)
+    return false if user.nil?
+
+    self.votes.where(user_id: user.id).any?
+  end
+
+  def vote_from(user)
+    self.votes.where(user_id: user.id).first
   end
 end

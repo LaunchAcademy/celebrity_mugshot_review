@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409232703) do
+ActiveRecord::Schema.define(version: 20140422145619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140409232703) do
     t.datetime "updated_at"
     t.integer  "user_id",          null: false
     t.string   "image"
+    t.integer  "votes_count"
   end
 
   add_index "mugshots", ["user_id"], name: "index_mugshots_on_user_id", using: :btree
@@ -63,5 +64,14 @@ ActiveRecord::Schema.define(version: 20140409232703) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "mugshot_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["mugshot_id", "user_id"], name: "index_votes_on_mugshot_id_and_user_id", unique: true, using: :btree
 
 end

@@ -36,8 +36,16 @@
     </nav>
   </div>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <br>
+
+   <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+        <%= content_tag :div, msg %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
+  <% end %>
 
   <div class="row">
     <div class="small-12 columns">
