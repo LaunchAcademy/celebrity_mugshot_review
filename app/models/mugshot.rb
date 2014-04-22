@@ -11,7 +11,7 @@ class Mugshot < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def full_name
-    first_name << ' ' << last_name
+    [first_name , ' ', last_name].join
   end
 
   def has_vote_from?(user)

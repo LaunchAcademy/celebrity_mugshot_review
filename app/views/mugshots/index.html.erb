@@ -2,7 +2,7 @@
 
 <%= link_to "Create a Mugshot", new_mugshot_path, class: "button expand" %>
 
-
+<div class="panel">
   <% @mugshots.each do |mugshot| %>
     <div class="row">
       <div class="small-12 medium-8 medium-centered columns">
@@ -16,3 +16,4 @@
       </div>
     </div>
   <% end %>
+</div>
