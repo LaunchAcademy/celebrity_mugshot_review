@@ -19,6 +19,6 @@ feature 'create a comment', %Q{
 
     prev_count = 0
     click_button "Guilty"
-    expect(Mugshot.first.vote_count).to eql(prev_count + 1)
+    expect(Mugshot.first.votes_count).to eql(prev_count + 1)
   end
 end

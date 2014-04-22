@@ -1,6 +1,6 @@
 class Vote < ActiveRecord::Base
 
-  belongs_to :mugshot, counter_cache: :vote_count
+  belongs_to :mugshot, counter_cache: true
 
   belongs_to :user
 

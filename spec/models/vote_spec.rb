@@ -10,12 +10,12 @@ describe Vote do
 
     it 'does not have a user id' do
       expect(vote).to_not be_valid
-      expect(vote.errors[:user_id]).to include "can't be blank"
+      expect(vote.errors[:user]).to include "can't be blank"
     end
 
     it 'does not have a mugshot id' do
       expect(vote).to_not be_valid
-      expect(vote.errors[:mugshot_id]).to include "can't be blank"
+      expect(vote.errors[:mugshot]).to include "can't be blank"
     end
   end
 end
