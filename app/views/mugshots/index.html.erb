@@ -1,4 +1,8 @@
 <%= link_to "Create a Mugshot", new_mugshot_path, class: "button expand" %>
+<%= simple_form_for :q, url: mugshots_path, method: :get do |f| %>
+  <%= f.input :first_name %>
+  <%= f.button :submit, "Search" %>
+<% end %>
 
 <ul class="small-block-grid-1 medium-block-grid-3">
   <% @mugshots.each do |mugshot| %>
