@@ -64,6 +64,7 @@ describe User do
     expect(valid_user.full_name).to eq("Gene Simons")
   end
 
+  it {should have_many(:votes)}
   it {should have_many(:comments)}
   it {should have_many(:mugshots)}
 end
