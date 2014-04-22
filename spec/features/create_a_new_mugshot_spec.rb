@@ -27,7 +27,7 @@ feature 'create a new mugshot', %Q{
     select "2014" && "April" && '11', from: "Approximate Date"
     attach_file 'mugshot_image', File.join(Rails.root, '/spec/support/cat-mug-shot.jpg')
 
-    click_button 'Oh Damn... Submit'
+    click_button 'Submit'
 
     expect(page).to have_content('New Mugshot Submitted!')
     expect(page).to have_content(celeb.first_name)
