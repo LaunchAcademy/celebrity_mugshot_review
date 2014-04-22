@@ -11,16 +11,6 @@
       <%= image_tag mugshot.image %>
       <p><%= mugshot.description %></p>
     </li>
-    <li>
-      <h3><%= link_to mugshot.full_name, mugshot_path(mugshot) %></h3>
-      <%= image_tag 'http://placekitten.com/g/200/450' %>
-      <p><%= mugshot.description %></p>
-    </li>
-    <li>
-      <h3><%= link_to mugshot.full_name, mugshot_path(mugshot) %></h3>
-      <%= image_tag 'http://placebear.com/200/00' %>
-      <p><%= mugshot.description %></p>
-    </li>
   <% end %>
-  <%= paginate @mugshots %>
 </ul>
+<%= paginate @mugshots %>
