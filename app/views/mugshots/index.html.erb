@@ -1,24 +1,13 @@
 <%= link_to "Create a Mugshot", new_mugshot_path, class: "button expand" %>
 
 <ul class="small-block-grid-1 medium-block-grid-3">
-  <% 5.times do %>
   <% @mugshots.each do |mugshot| %>
     <li>
       <h3><%= link_to mugshot.full_name, mugshot_path(mugshot) %></h3>
       <%= image_tag mugshot.image %>
       <p><%= mugshot.description %></p>
     </li>
-    <li>
-      <h3><%= link_to mugshot.full_name, mugshot_path(mugshot) %></h3>
-      <%= image_tag 'http://placekitten.com/g/200/450' %>
-      <p><%= mugshot.description %></p>
-    </li>
-    <li>
-      <h3><%= link_to mugshot.full_name, mugshot_path(mugshot) %></h3>
-      <%= image_tag 'http://placebear.com/200/00' %>
-      <p><%= mugshot.description %></p>
-    </li>
   <% end %>
-  <% end %>
+
 
 </ul>
