@@ -12,7 +12,7 @@ class Mugshot < ActiveRecord::Base
   paginates_per 50
 
   def full_name
-    first_name << ' ' << last_name
+    [first_name, last_name].join
   end
 
   def has_vote_from?(user)
