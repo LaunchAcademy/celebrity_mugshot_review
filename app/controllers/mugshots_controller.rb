@@ -25,8 +25,12 @@ class MugshotsController < ApplicationController
   end
 
   def index
-    @mugshots = Mugshot.order(:created_at).page params[:page]
-
+    if params[:q]
+      first_name = params[:q][:first_name]
+      @mugshots = Mugshot.where("first_name ILIKE ?", "%#{first_name}%").page params[:page]
+    else
+      @mugshots = Mugshot.order(:created_at).page params[:page]
+    end
   end
 
   def edit
